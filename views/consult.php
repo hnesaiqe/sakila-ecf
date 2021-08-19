@@ -1,16 +1,39 @@
-<?php require './layouts/head.php'; ?>
-<?php require './layouts/header.php'; ?>
-<?php require '../classes/Film.php'; ?>
-<?php require '../helpers/db.php'; ?>
+<?php 
+include '../function.php';
+require '../helpers/database.php';
+require '../views/partials/head.php';
+require '../views/partials/header.php';
+require '../classes/Film.php'; ?>
 
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+<?php 
+$conn = pdo_connect_mysql();
+if ($conn) {
+    echo ' yes!!';
+    }else {
+        echo "casse toi de la!!!";
+    };
+  try {     
+    $stmt = $conn->prepare('SELECT * FROM film');
+    $stmt->execute([]);
+    $film = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }catch(PDOException $e) {
+      echo "Error: " . $e->getMessage();
+    }   
+?>
+
+
+<div class="row">
+    <?php foreach($film as $data) : ?>
+        <div class="card col-3 m-3 mx-auto" style="width: 18rem;">
+            <img src="../public/image/dvd-logo" class="card-img-top" alt="dvd">
+            <h2><?= $data['rental_rate']; ?></h2>
+            <div class="card-body">
+                <h5 class="card-title"><?= $data['title']; ?></h5>
+                <p class="card-text"><?= $data['description']; ?></p>
+                <a href="#" class="btn btn-primary">SEE MORE</a>
+            </div>
+        </div>
+        <?php endforeach; ?>
     </div>
-</div>
 
-<?php require './layouts/footer.php'; ?>
+<?php include '../views/partials/footer.php'; ?>

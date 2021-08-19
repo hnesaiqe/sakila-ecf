@@ -1,8 +1,9 @@
 <?php
-require './helpers/db.php';
-include './views/head.php';
-include './views/header.php';
+require './helpers/database.php';
+require 'views/partials/head.php';
+require 'views/partials/header.php';
 ?>
+
 <section >
     <div class="col-md-12 text-center mx-auto my-5">
         <button class="btn btn-outline-info" name="btnCheck" type="submit">
@@ -17,5 +18,5 @@ include './views/header.php';
         </button>
     </div>
 </section>
-<?php include './views/footer.php';
+<?php include './views/partials/footer.php';
 ?>
