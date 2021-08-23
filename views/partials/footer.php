@@ -1,6 +1,6 @@
 </div>
 <footer>
-    <div class="footer text-center bg-info h-25">
+    <div class="footer text-center bg-info">
         <p> Sakila.Ecf © by HNE Saïqë</p>
     </div>
 </footer>

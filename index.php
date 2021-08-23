@@ -11,7 +11,7 @@ require 'views/partials/header.php';
                 Consulter
             </h1>
         </button>
-        <button class="btn btn-outline-secondary" name="btnRent" type="submit">
+        <button class="btn btn-outline-secondary" name="btnRent" href="./views/consult.php">
             <h1>
                 Louer
             </h1>

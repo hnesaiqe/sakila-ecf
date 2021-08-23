@@ -4,6 +4,7 @@
       SAKILA-DVD location
     </h1>
   </div>
+  <?php require '../classes/Category.php';?> 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <div class="container-fluid">
@@ -16,7 +17,14 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>             
+          </li>
+          <li class="nav-item">
+            <?php $categories = Category::all();
+                    // var_dump($categories); ?>
+            <?php foreach($categories as $data) { ?>
+            <a class="nav-link active" aria-current="page" href="category.php?id=<?= $data["category_id"] ?>"><?= $data['name'] ?></a>
+          </li>
+          <?php } ?>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
