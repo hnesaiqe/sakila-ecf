@@ -9,20 +9,20 @@ require '../classes/Actor.php'; ?>
 <div class="row">
     <?php 
         $id = $_GET["id"];
-        var_dump($id);
-        $category = Category::readByCat($id);
-        var_dump($category);
+        // var_dump($id);
+        $category = Category::readByCats($id);
+        // var_dump($category);
 
         ?>
-        <?php 
+    <?php 
         foreach($category as $data) { 
-            // var_dump($data);      
-            ?>
-      
+             var_dump($data);      
+    ?>
 
+    <h2 class="col-md-6"><?= $data['name']; ?></h2>
 
-    <h2 class="col-md-6"><?= $category['name']; ?></h2>
-<?php }; ?>
+    <?php 
+    }; ?>
 
 </div>
 
