@@ -2,9 +2,13 @@
 include '../function.php';
 require '../helpers/database.php';
 require '../views/partials/head.php';
+require '../classes/Category.php';
 require '../views/partials/header.php';
 require '../classes/Film.php';
-require '../classes/Actor.php'; ?>
+require '../classes/Actor.php';
+?> 
+
+
 
 <div class="row">
     <?php 

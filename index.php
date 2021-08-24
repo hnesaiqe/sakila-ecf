@@ -1,5 +1,6 @@
 <?php
 require './helpers/database.php';
+require './classes/Category.php';
 require 'views/partials/head.php';
 require 'views/partials/header.php';
 ?>
