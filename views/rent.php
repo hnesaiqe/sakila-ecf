@@ -9,14 +9,13 @@ require '../classes/Actor.php';
 require '../classes/Language.php'; 
 ?>
 
-<button type="button" id="add">Add Other Members</button>
+<button type="button btn_add" id="add">Add Other Members</button>
 <div id="dynamic_field"></div>
 <button type="button" class="btn_remove hidden">Remove last</button>
 <span></span>
 
 <script>
-    // test jQuery
-$(document).ready(function () {
+    // test jQuery$(document).ready(function () {
     var i = 1;
     $('#add').click(function () {
             if (i <= 5) {
@@ -67,21 +66,28 @@ $(document).ready(function () {
                         '</div>'+							
                     '</span>'
                 )
+				if (i==5) {
+					console.log(i);
+					$('.btn_add').addClass('hidden');
+				  } else {
+					$('.btn_add').removeClass('hidden');
+
+				  }
                 i++;
                 $('.btn_remove').removeClass('hidden');
             }
     });
     $(document).on('click', '.btn_remove', function() {
-          var button_id = $(this).attr("id");
           i--;
           $('#row' + $('#dynamic_field span').length).remove();
           if (i<=1) {
             $('.btn_remove').addClass('hidden');
-          }
+          }else {
+			$('.btn_add').removeClass('hidden');
+		  }       
+
         });
-    });
-
-
+    
 </script>
 
 <?php include '../views/partials/footer.php';?>
