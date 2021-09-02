@@ -2,7 +2,8 @@
 include '../function.php';
 require '../helpers/database.php';
 require '../views/partials/head.php';
-require '../views/partials/header.php';
+require '../classes/Category.php';
+require '../views/partials/navbar.php';
 require '../classes/Film.php';
 require '../classes/Actor.php'; 
 require '../classes/Language.php'; 
@@ -16,7 +17,7 @@ $film = Film::read($id);
 <div class="card my-3">
     <div class="row g-0">
         <div class="col-md-4 bg-light">
-            <img src="../public/image/dvd-logo" class="img-fluid rounded-start" alt="...">
+            <img src="../public/image/dvd-logo.png" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body">

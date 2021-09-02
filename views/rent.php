@@ -3,11 +3,14 @@ include '../function.php';
 require '../helpers/database.php';
 require '../views/partials/head.php';
 require '../classes/Category.php';
-require '../views/partials/header.php';
+require '../views/partials/navbar.php';
 require '../classes/Film.php';
 require '../classes/Actor.php'; 
 require '../classes/Language.php'; 
 ?>
+<form action="" method="get">
+    
+</form>
 
 <button type="button btn_add" id="add">Add Other Members</button>
 <div id="dynamic_field"></div>

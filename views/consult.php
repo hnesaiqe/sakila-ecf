@@ -2,7 +2,8 @@
 include '../function.php';
 require '../helpers/database.php';
 require '../views/partials/head.php';
-require '../views/partials/header.php';
+require '../classes/Category.php';
+require '../views/partials/navbar.php';
 require '../classes/Film.php';
 require '../classes/Actor.php'; ?>
 
@@ -20,9 +21,9 @@ if ($conn) {
         foreach($films as $data) { 
             // var_dump($data);      
             ?>
-    <div class="card m-3 mx-auto" style="width: 18rem;">
+    <div class="card m-3 mx-auto text-center" style="width: 18rem;">
         <h5 class="card-title text-center"><strong><?= $data['title']; ?></strong></h5>
-        <img src="../public/image/dvd-logo" class="card-img-top" alt="dvd">
+        <img src="../public/image/dvd-logo.png" class="card-img-top" alt="dvd">
             <div class="col-md-12 d-flex text-center">
                 <h2 class="col-md-6"><?= $data['rental_rate']; ?></h2>
                 <h2 class="col-md-6"><?= $data['name']; ?></h2>
