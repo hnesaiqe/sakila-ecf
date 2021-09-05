@@ -1,8 +1,9 @@
 <?php
 
-class Film_category extends Database{
+class Film_category extends Database
+{
 
-    public static function all() 
+    public static function all()
     {
         $filmCategories = self::query(' SELECT *
                                     FROM film_category fc
@@ -12,9 +13,10 @@ class Film_category extends Database{
         // var_dump($categories);
     }
 
-    public static function readByFilmCat($id) {
+    public static function readByFilmCat($id)
+    {
         $filmCategory = self::query("SELECT * FROM film_category fc, category c , film f WHERE fc.category_id = c.category_id AND fc.film_id = f.film_id  AND c.category_id=$id ");
         return $filmCategory->fetchAll();
-    var_dump($filmCategory);
+        var_dump($filmCategory);
     }
 }

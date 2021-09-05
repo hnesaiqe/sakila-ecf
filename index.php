@@ -3,8 +3,10 @@ require './helpers/database.php';
 require './classes/Category.php';
 require 'views/partials/head.php';
 require 'views/partials/navbar.php';
+require 'views/partials/home.php';
 ?>
-<section >
+<section>
+    
     <div class="col-md-12 text-center mx-auto my-5">
         <a  href="./views/consult.php">
             <button class="btn btn-outline-info" name="btnCheck" type="submit">
@@ -19,5 +21,6 @@ require 'views/partials/navbar.php';
         
     </div>
 </section>
+
 <?php include './views/partials/footer.php';
 ?>
