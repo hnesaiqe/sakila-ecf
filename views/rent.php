@@ -1,3 +1,4 @@
+Page : rent.php
 <?php
 include '../function.php';
 require '../helpers/database.php';
@@ -8,88 +9,82 @@ require '../classes/Film.php';
 require '../classes/Actor.php';
 require '../classes/Language.php';
 ?>
-<form action="" method="get">
+<form action="" method="post ">
+    <div class="input-group my-3">
+        <span class="input-group-text" id="basic-addon1">Vendeur</span>
+        <input type="text" class="form-control" placeholder="Nom Prénom" aria-label="Nom Prénom"
+            aria-describedby="basic-addon1" autocomplete="off" required>
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nom Prénom" aria-label="Nom Prénom"
+            aria-describedby="basic-addon1" autocomplete="off" required>
+        <span class="input-group-text" id="basic-addon2">Client</span>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">Film</span>
+        <input type="text" class="form-control" placeholder="Choix du film" aria-label="Nom Prénom"
+            aria-describedby="basic-addon1" autocomplete="off" required>
+    </div>  
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nom Prénom" aria-label="Nom Prénom"
+            aria-describedby="basic-addon1" autocomplete="off" required>
+        <span class="input-group-text" id="basic-addon2">Client</span>
+    </div>
 
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+            aria-describedby="basic-addon2" autocomplete="off" required> 
+        <span class="input-group-text" id="basic-addon2">@example.com</span>
+    </div>
+
+    <label for="basic-url" class="form-label">Your vanity URL</label>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-text">With textarea</span>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
 </form>
-
-<button type="button btn_add" id="add">Add Other Members</button>
-<div id="dynamic_field"></div>
-<button type="button" class="btn_remove hidden">Remove last</button>
-<span></span>
-
-<script>
-    // test jQuery$(document).ready(function () {
-    var i = 1;
-    $('#add').click(function() {
-        if (i <= 5) {
-            console.log(i);
-            $('#dynamic_field').append(
-                '<span id="row' + i + '" >' +
-                '<div class="col-12">' +
-                '<div class=" my-1">' +
-                '<div class = "col-md-12" >' +
-                '<div class = "col-md-12  align-items-center d-md-flex" >' +
-                '<div class = "col-md-4 p-2 rounded mb-1 mb-md-0" style = "background-color:#2e4f9b; color:white">' +
-                '<label for = "inputLastName" class = "form-label m-0 fs-6" >DÉBUT DE L ABSENCE</label>' +
-                '</div>' +
-                '<div class = "col-md-4">' +
-                '<input type = "date" id = "dayNow" class = "form-control" name = "date_start" onclick = "datnow();" value = "" require = "">' +
-                '</div>' +
-                '<div class = "col-md-4">' +
-                '<div class = "input-group ">' +
-                '<select class = "form-select" id = "inputGroupSelect01" name = "idmotif_start">' +
-                '<option value="2">Matin</option>' +
-                '<option value="3">Après-midi </option>' +
-                '</select>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '<div class="row my-1 d-flex">' +
-                '<div class="col-md-12">' +
-                '<div class="col-md-12  align-items-center d-md-flex">' +
-                '<div class="col-md-4 p-2 rounded mb-1 mb-md-0" style="background-color:#2e4f9b; color:white">' +
-                '<label for="inputLastName" class="form-label m-0">FIN DE L ABSENCE</label>' +
-                '</div>' +
-                '<div class="col-md-4">' +
-                '<input type="date" class="form-control" name="date_end" width="100%" require="">' +
-                '</div>' +
-                '<div class="col-md-4">' +
-                '<div class="input-group ">' +
-                '<select class="form-select"  name="idmotif_end">' +
-                '<option value="2">Matin</option>' +
-                '<option value="3">Après-midi </option>' +
-                '</select>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</span>'
-            )
-            if (i == 5) {
-                console.log(i);
-                $('.btn_add').addClass('hidden');
-            } else {
-                $('.btn_add').removeClass('hidden');
-
-            }
-            i++;
-            $('.btn_remove').removeClass('hidden');
-        }
+<!-- <script>
+$(document).ready(function () {
+    // Send Search Text to the server
+    $("#search").keyup(function () {
+      let searchText = $(this).val();
+      if (searchText != "") {
+        $.ajax({
+          url: " ",
+          method: "post",
+          data: {
+            query: searchText,
+          },
+          success: function (response) {
+            $("#show-list").html(response);
+          },
+        });
+      } else {
+        $("#show-list").html("");
+      }
     });
-    $(document).on('click', '.btn_remove', function() {
-        i--;
-        $('#row' + $('#dynamic_field span').length).remove();
-        if (i <= 1) {
-            $('.btn_remove').addClass('hidden');
-        } else {
-            $('.btn_add').removeClass('hidden');
-        }
-
+    // Set searched text in input field on click of search button
+    $(document).on("click", "a", function () {
+      $("#search").val($(this).text());
+      $("#show-list").html("");
     });
-</script>
-
+  });
+</script> -->
 <?php include '../views/partials/footer.php'; ?>

@@ -41,7 +41,7 @@ if ($conn) {
         <tbody>
             <tr>
                 <?php foreach($filmCategory as $data) { ?>
-                <th class="col-1"><img class=" img-thumbnail w-25" src="../public/image/dvd-logo.png" alt="" srcset=""> vendu</th>
+                <th class="col-1"><img class=" img-thumbnail w-25" src="../public/image/dvd-logo.png" alt="" srcset=""></th>
                 <td class="col-4"><?= $data['title'] ;?></td>
                 <td class="col-5"><?= $data['special_features'] ;?></td>
                 <td class="col-1"><?= $data['release_year'] ;?></td>
@@ -50,8 +50,6 @@ if ($conn) {
             <?php } ?>
         </tbody>
     </table>
-    
-
 </div>
 
 <?php include '../views/partials/footer.php';?>
