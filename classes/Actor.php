@@ -13,8 +13,7 @@ class Actor extends Database
         return $actors->fetchAll();
         var_dump($actors);
     }
-
-
+    
     public static function read($id)
     {
         $actor = self::query("  SELECT * 

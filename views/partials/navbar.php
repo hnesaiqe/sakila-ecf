@@ -4,7 +4,41 @@
       SAKILA-DVD location
     </h1>
   </div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+<!--   
+<form class="searchBar col-5 mx-auto">
+    <div class="input_container">
+        <input class="form-control m-2" type="text" placeholder="Search by Film one" id="country_id" onkeyup="autocomplet()">
+        <ul id="country_list_id"></ul>
+    </div>
+</form>
+
+<script>
+  
+  // autocomplet : this function will be executed every time we change the text
+  function autocomplet() {
+    var keyword = $('#country_id').val();
+    $.ajax({
+      url: 'search.php',
+      type: 'POST',
+      data: {keyword:keyword},
+      success:function(data){
+        $('#country_list_id').show();
+        $('#country_list_id').html(data);
+      }
+    });
+  }
+  
+  // set_item : this function will be executed when we select an item
+  function set_item(item) {
+    // change input value
+    $('#country_id').val(item);
+    // hide proposition list
+    $('#country_list_id').hide();
+  }
+</script>  -->
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-info ">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Ecf 7</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -24,10 +58,6 @@
           </li>
           <?php } ?>
         </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
       </div>
     </div>
   </nav>

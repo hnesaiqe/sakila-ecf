@@ -2,9 +2,9 @@
 
 class Database {
 
-    const servername = "localhost";
+    const servername = "127.0.0.1";
     const username = "root";
-    const password = "58Lj9pqJNHAabK9O";
+    const password = "";
     const database = "sakila";
 
     public static $table;
