@@ -8,8 +8,13 @@
  $pdo = connect();
 
 $keyword = '%'.$_POST['keyword'].'%';
-;
-$sql = "SELECT * FROM film WHERE title LIKE (:keyword) ORDER BY film_id ASC LIMIT 0, 10";
+echo $_POST['keyword'];
+$sql = "    SELECT  f.title, f.film_id,i.inventory_id FROM film f 
+            LEFT JOIN inventory i ON f.film_id = i.film_id
+            LEFT JOIN rental r ON  i.inventory_id = r.inventory_id
+            WHERE f.title LIKE (:keyword) AND r.return_date IS NOT NULL  
+            GROUP BY f.title
+            ORDER BY f.film_id ASC LIMIT 0, 20";
 $query = $pdo->prepare($sql);
 $query->bindParam(':keyword', $keyword, PDO::PARAM_STR);
 $query->execute();

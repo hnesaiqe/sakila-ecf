@@ -13,16 +13,15 @@ require '../classes/Customer.php';
 // $con = new PDO("mysql:host=localhost;dbname=sakila", 'root', '');
 
 $staffs = Staff::all();
-$customers = Customer::all();
 
 ?>
 
-<form class="searchBar col-5 mx-auto bg-secondary bg-gradient m-5 p-5">
+<form class="searchBar col-5 mx-auto bg-secondary rounded border border-info border-5 bg-gradient m-5 p-5">
   <div class="input-group p-3">
     <span class="input-group-text w-25">Vendeur</span>
     <select class="form-select" id="inputGroupSelect01" name="staffs">
       <?php foreach ($staffs as $data) { ?>
-      <option value="<?= $data['staff_id'] ?>"><?= $data['last_name']." ".$data['first_name'] ?></option>
+      <option value="<?= $data['staff_id'] ?>"> <?= $data['last_name']." ".$data['first_name'] ?> </option>
       <?php } ?>
     </select>
   </div>
@@ -30,16 +29,20 @@ $customers = Customer::all();
     <span class="input-group-text w-25">Client</span>
     <input class="form-control w-75" type="text" placeholder="Search by Customer" id="customer_id"
       onkeyup="autocompletCustomer()">
-    <ul class="dropdown-menu" id="customer_list_id"></ul>
+    <ul class="dropdown-menu " id="customer_list_id"></ul>
   </div>
-  
   <div class="input-group p-3">
     <span class="input-group-text w-25">Film</span>
     <input class="form-control w-75" type="text" placeholder="Search by Film one" id="film_id" onkeyup="autocomplet()">
     <ul class="dropdown-menu" id="film_list_id"></ul>
   </div>
+  <div class="input-group p-3">
+    <span class="input-group-text w-25">Retour</span>
+    <input class="form-control w-75" type="date">
+  </div>
+
   <div class="col-12 p-3">
-    <button type="submit" class="btn btn-primary">Valider</button>
+    <button type="submit" class="btnValider btn btn-outline-info ">Valider</button>
   </div>
 </form>
 
