@@ -1,3 +1,5 @@
+ <!-- Autocomplète pour l'input CUSTOMER..  -->
+
 <?php
 
 // PDO connect *********
