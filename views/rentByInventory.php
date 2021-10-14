@@ -3,7 +3,6 @@ require '../helpers/database.php';
 require '../views/partials/head.php';
 require '../classes/Category.php';
 require '../views/partials/navbar.php';
-require '../views/autocomplete.php';
 require '../classes/Staff.php';
 require '../classes/Film.php';
 require '../classes/Customer.php';
